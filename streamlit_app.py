@@ -4,9 +4,10 @@ import math
 from crazybin import imshow
 
 def main():
-    st.title("Image Tesselation")
+    st.title("Image Tessellation")
     st.write("This app allows you to transform your images into a parquet of small tiles.")
-    st.write("Just upload and image and select the type of tile you want together with the resolution.")
+    st.write("Just upload an image and select the type of tile you want together with the resolution.")
+    st.write("The app is powered by [crazybin](https://github.com/Ockenfuss/crazybin), a python module to visualize images and histograms as tessellations.")
 
     tile_descriptions = {
             "Regular hexagon": "hex",
