@@ -4,6 +4,14 @@ import math
 from crazybin import imshow
 
 def main():
+    # Create three columns
+    col1, col2, col3 = st.columns([2,1.4,2])
+
+    # Display an image in each column
+    col1.image('examples/images/grande_jatte_seurat.jpg', use_column_width=True)
+    col3.image('examples/images/great_wave.jpg', use_column_width=True)
+    col2.image('examples/images/hex_rhomb.jpg', use_column_width=True)
+
     st.title("Image Tessellation")
     st.write("This app allows you to transform your images into a parquet of small tiles.")
     st.write("Just upload an image and select the type of tile you want together with the resolution.")
@@ -34,7 +42,7 @@ def main():
             resolution=math.ceil(100**((resolution-1)/(slidermax-1)))
 
 
-        st.subheader("Tesselated image:")
+        st.subheader("Tessellated image:")
         print(resolution)
         print(tile_types[tile_key])
         fig, ax = plt.subplots()
