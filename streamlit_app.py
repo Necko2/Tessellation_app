@@ -1,6 +1,8 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import math
+import imageio
+import numpy as np
 from crazybin import imshow
 
 def main():
@@ -33,7 +35,9 @@ def main():
     resolution = st.slider("Choose the resolution", min_value=1, max_value=slidermax, value=5)
 
     if file is not None:
-        image=plt.imread(file)/255
+        image = imageio.imread(file)
+        if image.dtype != np.float32:
+                image = image / 255.0  # Normalize to [0, 1] range
         st.subheader("Original Image:")
         st.image(image, use_column_width=True)
 
